@@ -4,7 +4,8 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./content/**/*.{js,ts,jsx,tsx,mdx}"
+    "./data/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     extend: {
@@ -16,7 +17,7 @@ const config: Config = {
         pearl: "#fcfbf8"
       },
       fontFamily: {
-        serif: ["Georgia", "Cambria", "Times New Roman", "serif"],
+        serif: ["Iowan Old Style", "Palatino Linotype", "Book Antiqua", "serif"],
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"]
       },
       boxShadow: {

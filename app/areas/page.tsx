@@ -1,28 +1,36 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/ui/page-hero";
+import { PageIntro } from "@/components/ui/page-intro";
 import { Section } from "@/components/ui/section";
-import { areas } from "@/content/pages";
+import { areas, referralNotice } from "@/data/areas";
+import { TopicCard } from "@/components/cards/topic-card";
+import { CTA } from "@/components/ui/cta";
 
 export const metadata: Metadata = {
   title: "С чем работаю",
-  description: "Темы и запросы, с которыми чаще всего обращаются в терапию."
+  description: "Основные темы запросов: тревога, отношения, кризисы, границы, самооценка, эмоциональная устойчивость."
 };
 
 export default function AreasPage() {
   return (
     <>
-      <PageHero
-        title="Сферы, с которыми я работаю"
-        intro="Вы можете прийти как с четко сформулированным запросом, так и с общим ощущением, что нужна поддержка."
+      <PageIntro
+        title="С чем я работаю"
+        intro="Вы можете прийти и с четким запросом, и с ощущением, что «что-то не так». Формулировка запроса может уточняться уже в процессе."
       />
       <Section>
-        <ul className="grid gap-4 sm:grid-cols-2">
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {areas.map((topic) => (
-            <li key={topic} className="rounded-xl border border-stone/80 bg-white p-5 text-ink/80 shadow-card">
-              {topic}
-            </li>
+            <TopicCard key={topic} title={topic} />
           ))}
         </ul>
+      </Section>
+
+      <Section title={referralNotice.title}>
+        <div className="rounded-2xl border border-stone/80 bg-white p-6 text-ink/75 shadow-card">{referralNotice.text}</div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <CTA type="primary" />
+          <CTA type="secondary" />
+        </div>
       </Section>
     </>
   );

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { siteConfig } from "@/content/site";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -25,8 +25,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ru">
       <body className="min-h-screen">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-pearl focus:px-3 focus:py-2">
-          Перейти к содержанию
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-pearl focus:px-3 focus:py-2"
+        >
+          Перейти к основному содержанию
         </a>
         <Header />
         <main id="main-content">{children}</main>

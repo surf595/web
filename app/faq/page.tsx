@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/ui/page-hero";
+import { PageIntro } from "@/components/ui/page-intro";
 import { Section } from "@/components/ui/section";
-import { faqItems } from "@/content/pages";
+import { faqItems } from "@/data/faq";
+import { FAQAccordion } from "@/components/sections/faq-accordion";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Ответы на частые вопросы о психотерапии и формате работы."
+  description: "Ответы на частые вопросы о формате встреч, длительности, онлайн-работе, переносах и первой записи."
 };
 
-export default function FaqPage() {
+export default function FAQPage() {
   return (
     <>
-      <PageHero title="Частые вопросы" intro="Если вы не нашли нужный ответ, можно написать мне в контактах — спокойно обсудим ваш запрос." />
+      <PageIntro title="FAQ" intro="Короткие ответы на вопросы, которые часто возникают перед началом терапии." />
       <Section>
-        <div className="space-y-4">
-          {faqItems.map((item) => (
-            <details key={item.question} className="group rounded-xl border border-stone/80 bg-white p-5 shadow-card">
-              <summary className="cursor-pointer list-none text-lg marker:content-none">{item.question}</summary>
-              <p className="mt-3 text-ink/75">{item.answer}</p>
-            </details>
-          ))}
-        </div>
+        <FAQAccordion items={faqItems} />
       </Section>
     </>
   );
