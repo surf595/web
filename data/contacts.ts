@@ -3,7 +3,7 @@ import { siteConfig } from "@/data/site";
 export const contacts = {
   city: siteConfig.city,
   office: siteConfig.office,
-  online: "Работаю онлайн с клиентами из разных городов и стран.",
+  online: "Онлайн-встречи доступны из любой страны.",
   hours: siteConfig.workHours,
-  nextStep: "Напишите удобным способом. В ответ вы получите краткие организационные детали и варианты первой встречи."
+  firstContact: "После сообщения я отвечу, уточню организационные детали и предложу варианты времени первой встречи."
 };

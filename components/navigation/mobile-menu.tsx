@@ -14,6 +14,16 @@ export function MobileMenu() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/политика-конфиденциальности" className="block rounded-lg px-3 py-2 text-sm text-ink/85 hover:bg-sand/80">
+              Политика конфиденциальности
+            </Link>
+          </li>
+          <li>
+            <Link href="/политика-персональных-данных" className="block rounded-lg px-3 py-2 text-sm text-ink/85 hover:bg-sand/80">
+              Политика обработки данных
+            </Link>
+          </li>
         </ul>
       </nav>
     </details>

@@ -1,17 +1,16 @@
 export const siteConfig = {
-  name: "Частная психологическая практика",
-  tagline: "Психолог · психотерапевт · групповой терапевт",
-  url: "https://example-therapy.ru",
+  name: "Анна Левина",
+  role: "Психолог / психотерапевт",
+  tagline: "Индивидуальная психотерапия для взрослых",
+  url: "https://example-therapy.ee",
   description:
-    "Спокойная и профессиональная психотерапевтическая практика для взрослых: индивидуально, для пар и в группе. Очно в Москве и онлайн.",
-  city: "Москва",
-  office: "Тверской район, 7 минут от метро",
-  phone: "+7 (999) 123-45-67",
-  email: "hello@example-therapy.ru",
-  workHours: "Пн–Пт: 10:00–20:00, Сб: 11:00–16:00",
-  workLanguages: ["Русский", "Английский (по запросу)"],
-  social: {
-    telegram: "https://t.me/example",
-    whatsapp: "https://wa.me/79991234567"
-  }
+    "Русскоязычный психолог в Таллине: индивидуальная психотерапия для взрослых очно и онлайн. Тревога, отношения, внутренние конфликты, кризисы.",
+  city: "Таллин",
+  office: "ул. Вана-Лыуна, 14 (placeholder)",
+  phone: "+372 5555 1234",
+  email: "hello@example-therapy.ee",
+  messenger: "https://t.me/example",
+  workHours: "Пн–Пт: 10:00–19:00 (placeholder)",
+  workLanguages: ["Русский"],
+  sessionDuration: "50 минут"
 };

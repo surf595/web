@@ -9,12 +9,13 @@ export function Footer() {
       <Container className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <section>
           <h2 className="text-xl">{siteConfig.name}</h2>
-          <p className="mt-3 text-sm text-ink/70">{siteConfig.description}</p>
+          <p className="mt-3 text-sm text-ink/70">{siteConfig.tagline}</p>
+          <p className="mt-2 text-sm text-ink/70">Очно в Таллине и онлайн, язык работы — русский.</p>
           <p className="mt-4 text-sm text-ink/70">© {new Date().getFullYear()} · Частная практика</p>
         </section>
 
         <section>
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/80">Разделы</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-ink/80">Навигация</h3>
           <ul className="mt-3 space-y-2">
             {navigation.map((item) => (
               <li key={item.href}>
@@ -23,6 +24,16 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link href="/политика-конфиденциальности" className="text-sm text-ink/75 hover:text-ink">
+                Политика конфиденциальности
+              </Link>
+            </li>
+            <li>
+              <Link href="/политика-персональных-данных" className="text-sm text-ink/75 hover:text-ink">
+                Политика обработки персональных данных
+              </Link>
+            </li>
           </ul>
         </section>
 

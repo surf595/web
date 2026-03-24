@@ -1,5 +1,3 @@
-import { CTA } from "@/components/ui/cta";
-
 export function ContactForm() {
   return (
     <form className="grid gap-4 rounded-2xl border border-stone/80 bg-white p-6 shadow-card" aria-label="Форма первичного контакта">
@@ -13,6 +11,7 @@ export function ContactForm() {
           autoComplete="name"
           type="text"
           required
+          minLength={2}
           className="w-full rounded-lg border border-stone bg-pearl px-3 py-2 text-sm"
           placeholder="Как к вам обращаться"
         />
@@ -29,7 +28,11 @@ export function ContactForm() {
           required
           className="w-full rounded-lg border border-stone bg-pearl px-3 py-2 text-sm"
           placeholder="Как удобно ответить"
+          aria-describedby="contact-help"
         />
+        <p id="contact-help" className="mt-1 text-xs text-ink/60">
+          Достаточно одного способа связи.
+        </p>
       </div>
       <div>
         <label htmlFor="message" className="mb-2 block text-sm text-ink/85">
@@ -43,8 +46,10 @@ export function ContactForm() {
           placeholder="Пару строк о том, с чем хотите обратиться"
         />
       </div>
-      <CTA type="primary" className="w-fit" />
-      <p className="text-xs text-ink/60">Форма не предназначена для передачи чувствительной медицинской информации.</p>
+      <button type="submit" className="w-fit rounded-full bg-ink px-6 py-3 text-sm font-medium text-pearl transition hover:bg-ink/90">
+        Записаться
+      </button>
+      <p className="text-xs text-ink/60">Не указывайте в форме чувствительные личные данные или подробности травматического опыта.</p>
     </form>
   );
 }

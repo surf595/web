@@ -16,6 +16,13 @@ export type ServiceItem = {
   price: string;
 };
 
+export type AreaItem = {
+  title: string;
+  experience: string;
+  manifestations: string;
+  therapyHelp: string;
+};
+
 export type FaqItem = {
   question: string;
   answer: string;

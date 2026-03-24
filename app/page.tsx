@@ -3,49 +3,73 @@ import { Hero } from "@/components/sections/hero";
 import { Section } from "@/components/ui/section";
 import { homeData } from "@/data/home";
 import { areas } from "@/data/areas";
-import { services } from "@/data/services";
 import { faqItems } from "@/data/faq";
-import { TrustSignals } from "@/components/sections/trust-signals";
-import { ServiceCard } from "@/components/cards/service-card";
 import { TopicCard } from "@/components/cards/topic-card";
 import { FAQAccordion } from "@/components/sections/faq-accordion";
 import { CTA } from "@/components/ui/cta";
+import { CredentialsSection } from "@/components/sections/credentials-section";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Главная",
-  description: "Психологическая и психотерапевтическая помощь: индивидуально, для пар и в группе. Очно в Москве и онлайн."
+  title: "Психолог в Таллине — индивидуальная психотерапия",
+  description:
+    "Анна Левина, психолог и психотерапевт в Таллине. Работа с тревогой, отношениями, внутренними конфликтами. Очно и онлайн."
 };
 
 export default function HomePage() {
   return (
     <>
-      <Hero title={homeData.hero.title} description={homeData.hero.description} />
+      <Hero title={homeData.hero.title} subtitle={homeData.hero.subtitle} chips={homeData.hero.chips} />
 
-      <Section title={homeData.intro.title} description={homeData.intro.text}>
-        <TrustSignals items={homeData.trustSignals} />
-      </Section>
-
-      <Section title="С чем я работаю" description="Краткий обзор тем, с которыми чаще всего приходят в терапию.">
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {areas.slice(0, 6).map((topic) => (
-            <TopicCard key={topic} title={topic} />
-          ))}
-        </ul>
-      </Section>
-
-      <Section title="Форматы помощи" description="Вы можете выбрать подходящий уровень глубины и регулярности работы.">
-        <div className="grid gap-5 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+      <Section
+        title="С какими запросами я работаю"
+        description="Темы, с которыми чаще всего приходят в индивидуальную терапию."
+      >
+        <div className="grid gap-4 sm:grid-cols-2">
+          {areas.map((item) => (
+            <TopicCard key={item.title} item={item} />
           ))}
         </div>
       </Section>
 
-      <Section title={homeData.faqPreviewTitle}>
-        <FAQAccordion items={faqItems} limit={4} />
+      <Section title="Как может помочь терапия" description={homeData.helpText}>
+        <div />
       </Section>
 
-      <Section className="pt-0" title="Если вы чувствуете, что откликается" description="Можно начать с короткого сообщения — без обязательств и давления.">
+      <Section title="Как я работаю" description="Базовая рамка индивидуальной работы.">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            "Формат: очно в Таллине и онлайн",
+            `Длительность: ${siteConfig.sessionDuration}`,
+            "Регулярность: обычно 1 раз в неделю",
+            "Язык: русский"
+          ].map((item) => (
+            <article key={item} className="rounded-xl border border-stone/80 bg-white p-5 text-sm text-ink/80 shadow-card">
+              {item}
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="О специалисте" description={homeData.intro}>
+        <CredentialsSection />
+      </Section>
+
+      <Section title="Что важно знать перед началом">
+        <ul className="grid gap-3 sm:grid-cols-2">
+          {homeData.beforeStart.map((item) => (
+            <li key={item} className="rounded-xl border border-stone/80 bg-white p-5 text-sm text-ink/80 shadow-card">
+              {item}
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section title={homeData.faqPreviewTitle}>
+        <FAQAccordion items={faqItems} limit={5} />
+      </Section>
+
+      <Section className="pt-0" title="Если хотите обсудить возможность работы">
         <div className="flex flex-wrap gap-3">
           <CTA type="primary" />
           <CTA type="secondary" />

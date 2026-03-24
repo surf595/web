@@ -2,10 +2,11 @@ import { NavItem } from "@/lib/types";
 
 export const navigation: NavItem[] = [
   { href: "/", label: "Главная" },
-  { href: "/about", label: "Обо мне" },
-  { href: "/how-i-work", label: "Как я работаю" },
-  { href: "/services", label: "Услуги" },
-  { href: "/areas", label: "С чем работаю" },
+  { href: "/о-специалисте", label: "О специалисте" },
+  { href: "/с-чем-я-работаю", label: "С чем я работаю" },
+  { href: "/как-я-работаю", label: "Как я работаю" },
+  { href: "/формат-и-стоимость", label: "Формат и стоимость" },
   { href: "/faq", label: "FAQ" },
-  { href: "/contacts", label: "Контакты" }
+  { href: "/контакты", label: "Контакты / запись" },
+  { href: "/статьи", label: "Статьи" }
 ];

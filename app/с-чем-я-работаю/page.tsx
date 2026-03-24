@@ -6,8 +6,9 @@ import { TopicCard } from "@/components/cards/topic-card";
 import { CTA } from "@/components/ui/cta";
 
 export const metadata: Metadata = {
-  title: "С чем работаю",
-  description: "Основные темы запросов: тревога, отношения, кризисы, границы, самооценка, эмоциональная устойчивость."
+  title: "С чем я работаю",
+  description:
+    "Тревога, отношения, повторяющиеся сценарии, кризисы, самооценка, внутренние конфликты. Психолог в Таллине и онлайн."
 };
 
 export default function AreasPage() {
@@ -15,16 +16,15 @@ export default function AreasPage() {
     <>
       <PageIntro
         title="С чем я работаю"
-        intro="Вы можете прийти и с четким запросом, и с ощущением, что «что-то не так». Формулировка запроса может уточняться уже в процессе."
+        intro="На этой странице описаны типичные переживания, с которыми приходят в терапию. Это не медицинская классификация, а ориентир для понимания вашего опыта."
       />
       <Section>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {areas.map((topic) => (
-            <TopicCard key={topic} title={topic} />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {areas.map((item) => (
+            <TopicCard key={item.title} item={item} />
           ))}
-        </ul>
+        </div>
       </Section>
-
       <Section title={referralNotice.title}>
         <div className="rounded-2xl border border-stone/80 bg-white p-6 text-ink/75 shadow-card">{referralNotice.text}</div>
         <div className="mt-8 flex flex-wrap gap-3">

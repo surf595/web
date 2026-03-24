@@ -24,11 +24,18 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-serif tracking-tight;
+  font-family: var(--font-serif);
+  @apply tracking-tight;
 }
 
-p {
-  @apply leading-relaxed;
+p,
+a,
+li,
+input,
+textarea,
+button,
+summary {
+  font-family: var(--font-sans);
 }
 
 :focus-visible {

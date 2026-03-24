@@ -1,4 +1,4 @@
 export const ctas = {
-  primary: { href: "/contacts", label: "Записаться" },
-  secondary: { href: "/contacts", label: "Задать организационный вопрос" }
+  primary: { href: "/контакты", label: "Записаться" },
+  secondary: { href: "/как-я-работаю", label: "Узнать, как я работаю" }
 };
